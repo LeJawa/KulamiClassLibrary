@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33627.172
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KulamiLibrary", "KulamiLibrary\KulamiLibrary.csproj", "{D6606387-6B63-4C25-AC04-C0964F3914ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KulamiLibraryTests", "KulamiLibraryTests\KulamiLibraryTests.csproj", "{CC6B3610-C816-4051-B7D4-AA366241FB5D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6606387-6B63-4C25-AC04-C0964F3914ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6606387-6B63-4C25-AC04-C0964F3914ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6606387-6B63-4C25-AC04-C0964F3914ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6606387-6B63-4C25-AC04-C0964F3914ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC6B3610-C816-4051-B7D4-AA366241FB5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC6B3610-C816-4051-B7D4-AA366241FB5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC6B3610-C816-4051-B7D4-AA366241FB5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC6B3610-C816-4051-B7D4-AA366241FB5D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B47B4B84-6D25-4850-A09C-65F7D309FF3A}
+	EndGlobalSection
+EndGlobal
