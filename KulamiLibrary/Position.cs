@@ -24,10 +24,43 @@
             return X < 0 || Y < 0;
         }
 
-        public static Position operator+ (Position a, Position b)
-            => new Position(a.X + b.X, a.Y + b.Y);
+        public static Position operator+ (Position pos1, Position pos2)
+            => new Position(pos1.X + pos2.X, pos1.Y + pos2.Y);
 
-        public static Position operator- (Position a, Position b)
-            => new Position(a.X - b.X, a.Y - b.Y);
+        public static Position operator- (Position pos1, Position pos2)
+            => new Position(pos1.X - pos2.X, pos1.Y - pos2.Y);
+
+        public static bool operator ==(Position pos1, Position pos2)
+        {
+            if (ReferenceEquals(pos1, pos2))
+                return true;
+
+            if (pos1 is null || pos2 is null)
+                return false;
+
+            return pos1.X == pos2.X && pos1.Y == pos2.Y;
+        }
+
+        public static bool operator !=(Position pos1, Position pos2)
+        {
+            return !(pos1 == pos2);
+        }
+
+        public override bool Equals(object? obj)
+        {
+            if (ReferenceEquals(this, obj))
+                return true;
+
+            if (obj == null || GetType() != obj.GetType())
+                return false;
+
+            Position other = (Position)obj;
+            return X == other.X && Y == other.Y;
+        }
+
+        public override int GetHashCode()
+        {
+            return (X.GetHashCode() * 397) ^ Y.GetHashCode();
+        }
     }
 }

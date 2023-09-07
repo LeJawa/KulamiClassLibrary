@@ -94,5 +94,62 @@ namespace KulamiLibraryTests
             Assert.Equal(expectedPosition.X, result.X);
             Assert.Equal(expectedPosition.Y, result.Y);
         }
+
+        [Fact]
+        public void OperatorEqual_ReturnsTrueForEqualPositions()
+        {
+            // Arrange
+            var position1 = new Position(3, 4);
+            var position2 = new Position(3, 4);
+
+            // Act
+            var isEqual = position1 == position2;
+
+            // Assert
+            Assert.True(isEqual);
+        }
+
+        [Fact]
+        public void OperatorNotEqual_ReturnsTrueForDifferentPositions()
+        {
+            // Arrange
+            var position1 = new Position(3, 4);
+            var position2 = new Position(1, 2);
+
+            // Act
+            var isNotEqual = position1 != position2;
+
+            // Assert
+            Assert.True(isNotEqual);
+        }
+
+        [Fact]
+        public void Equals_ReturnsTrueForEqualPositions()
+        {
+            // Arrange
+            var position1 = new Position(3, 4);
+            var position2 = new Position(3, 4);
+
+            // Act
+            var isEqual = position1.Equals(position2);
+
+            // Assert
+            Assert.True(isEqual);
+        }
+
+        [Fact]
+        public void GetHashCode_ReturnsSameValueForEqualPositions()
+        {
+            // Arrange
+            var position1 = new Position(3, 4);
+            var position2 = new Position(3, 4);
+
+            // Act
+            var hash1 = position1.GetHashCode();
+            var hash2 = position2.GetHashCode();
+
+            // Assert
+            Assert.Equal(hash1, hash2);
+        }
     }
 }

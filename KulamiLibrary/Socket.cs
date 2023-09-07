@@ -2,6 +2,7 @@
 {
     public class Socket
     {
+        // TODO: Check if constructor used, else remove
         public Socket(Position position)
         {
             Position = position;
@@ -24,12 +25,5 @@
         {
             return State == SocketState.EMPTY;
         }
-
-        // TODO: remove
-        //public void SetTileID(int tileID)
-        //{
-        //    TileID = tileID;
-        //}
-
     }
 }
