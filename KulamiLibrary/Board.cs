@@ -43,20 +43,15 @@
 
         public Socket? GetSocketAtPosition(Position position) 
         {
-            throw new NotImplementedException(); 
-        }
-
-        public SocketState GetSocketState(Position position)
-        {
             throw new NotImplementedException();
         }
+
+        public bool SetSocketState(Socket socket, SocketState state) { throw new NotImplementedException(); }
 
         public bool SetP1MarbleAtPosition(Position position) { throw new NotImplementedException(); }
         public bool SetP1MarbleAtSocket(Socket socket) { throw new NotImplementedException(); }
         public bool SetP2MarbleAtPosition(Position position) { throw new NotImplementedException(); }
         public bool SetP2MarbleAtSocket(Socket socket) { throw new NotImplementedException(); }
-
-        public bool SetSocketState(Socket socket, SocketState state) {  throw new NotImplementedException(); }
 
         #endregion
     }
