@@ -7,6 +7,17 @@
             public int Player1 { get; private set; }
             public int Player2 { get; private set; }
 
+            public PlayerNumber? Winner
+            {
+                get
+                {
+                    if (Player1 > Player2) return PlayerNumber.ONE;
+                    if (Player2 > Player1) return PlayerNumber.TWO;
+
+                    return null;
+                }
+            }
+
             public Score(int player1, int player2)
             {
                 Player1 = player1;
