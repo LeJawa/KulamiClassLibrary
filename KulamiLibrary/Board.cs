@@ -176,6 +176,37 @@
             return SetSocketState(socket, SocketState.PLAYER2_LAST);
         }
 
+        public void InitializeStandardBoard()
+        {
+            var bagOfQTiles = GetStandardBagOfQTiles();
+
+            InitializeBoardWithQTiles(bagOfQTiles);
+        }
+
+        public void InitializeBoardWithQTiles(List<QuantumTile> bagOfQTiles)
+        {
+            PlaceAllQTiles(bagOfQTiles);
+
+            FitToMaxBoardSize();
+        }
+
+        public int GetTileIdAt(int x, int y)
+        {
+            if (x < 0 || x >= _availableSize || y < 0 || y >= _availableSize)
+                return -1; // Out of bounds
+
+            foreach (var tile in _tiles)
+            {
+                foreach (var socket in tile.Sockets)
+                {
+                    if (socket.Position.X == x && socket.Position.Y == y)
+                        return tile.ID;
+                }
+            }
+
+            return -1; // Not tile at position
+        }
+
 
         #endregion
 
@@ -303,23 +334,6 @@
             return sortedPositions;
         }
 
-        private int GetTileIdAt(int x, int y)
-        {
-            if (x < 0 || x >= _availableSize || y < 0 || y >= _availableSize)
-                return -1; // Out of bounds
-
-            foreach (var tile in _tiles)
-            {
-                foreach (var socket in tile.Sockets)
-                {
-                    if (socket.Position.X == x && socket.Position.Y == y)
-                        return tile.ID;
-                }
-            }
-
-            return -1; // Not tile at position
-        }
-
         private void InitializeListOfSockets()
         {
             _sockets.Clear();
@@ -330,15 +344,6 @@
                     _sockets.Add(socket);
                 }
             }
-        }
-
-        private void InitializeStandardBoard()
-        {
-            var bagOfQTiles = GetStandardBagOfQTiles();
-
-            PlaceAllQTiles(bagOfQTiles);
-
-            FitToMaxBoardSize();
         }
 
         private bool PlaceQTile(QuantumTile qtile, Position position)
