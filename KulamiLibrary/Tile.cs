@@ -3,19 +3,19 @@
     public class Tile
     {
         public int ID { get; private set; }
-        private Socket[] _sockets;
+        public Socket[] Sockets { get; private set; }
 
         public Tile(List<Socket> sockets, int id)
         {
             ID = id;
-            _sockets = sockets.ToArray();
+            Sockets = sockets.ToArray();
         }
 
         public int GetBitMask(int maskSize)
         {
             int mask = 0;
 
-            foreach (Socket socket in _sockets)
+            foreach (Socket socket in Sockets)
             {
                 int bit_position = socket.Position.X * maskSize + socket.Position.Y;
                 mask |= 1 << bit_position;
@@ -28,7 +28,7 @@
         {
             int score = 0;
 
-            foreach (Socket socket in _sockets)
+            foreach (Socket socket in Sockets)
             {
                 if (socket.State == SocketState.PLAYER1 || socket.State == SocketState.PLAYER1_LAST)
                     score++;
@@ -46,7 +46,7 @@
 
         public int GetPoints()
         {
-            return _sockets.Length;
+            return Sockets.Length;
         }
 
     }
