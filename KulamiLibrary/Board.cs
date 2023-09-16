@@ -1,4 +1,4 @@
-﻿namespace KulamiClassLibrary
+﻿namespace KulamiLibrary
 {
     public class Board
     {

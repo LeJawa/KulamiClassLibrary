@@ -1,4 +1,4 @@
-﻿using KulamiClassLibrary;
+﻿using KulamiLibrary;
 
 namespace KulamiLibrary
 {
