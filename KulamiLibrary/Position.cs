@@ -2,8 +2,10 @@
 {
     public class Position
     {
-        public int X { get; private set; }
-        public int Y { get; private set; }
+        public int X { get; set; }
+        public int Y { get; set; }
+
+        public Position() { }
 
         public Position(int x, int y)
         {
@@ -63,4 +65,26 @@
             return (X.GetHashCode() * 397) ^ Y.GetHashCode();
         }
     }
+
+    public class FloatPosition
+    {
+        public float X;
+        public float Y;
+
+        public FloatPosition(float x, float y)
+        {
+            X = x;
+            Y = y;
+        }
+
+        public float DistanceFrom(Position other)
+        {
+            float x = X - other.X;
+            float y = Y - other.Y;
+
+            return (float)Math.Sqrt(x * x + y * y);
+        }
+    }
+
+
 }
